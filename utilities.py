@@ -34,6 +34,8 @@
 ##########################
 
 import os, shutil, sys, re, glob, subprocess
+from termios import tcflush, TCIOFLUSH
+
 from gsurl.gsurl_v3_lgppp import gsurl_v3
 
 ###################
@@ -221,4 +223,26 @@ def setup_dirs(d_vars):
             if len(d_vars['parsetfile'])<4:
                 cfgfile.write('PARSET     = "-"\n')
 
-    return 
+    return
+
+
+def should_continue():
+    """Ask user to press key to continue"""
+    ####################
+    ##Wait for keystroke
+    ###################
+
+    yes = set(['yes','y', 'ye','yea','yesh','Y','oui', ''])
+    no = set(['no','n','N'])
+    print("")
+    print("Do you want to continue? Y/N (Enter continues)")
+
+    tcflush(sys.stdin, TCIOFLUSH) #Flush input buffer to stop enter-spammers
+    choice = input().lower()
+
+    if choice in yes:
+       pass
+    elif choice in no:
+       sys.exit()
+    else:
+       sys.exit()

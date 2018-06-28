@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
 import os, sys
-from utilities import setup_dirs, parse_arguments
+from utilities import setup_dirs, parse_arguments, should_continue
 from Tokens.createViews import createViews,get_db
 from Tokens.createObsIDView import createViews_per_OBSID
 from Tokens.resetErrorTokens import reset
 from Tokens.removeObsIDTokens import deleteDocs
 from Tokens.createTokens import loadTokens
-from termios import tcflush, TCIOFLUSH
 
 import configparser
 config = configparser.ConfigParser()
@@ -69,25 +68,8 @@ if __name__ == "__main__":
     #prepare_sandbox()
 
     #check_state_and_stage()
-    
-    ####################
-    ##Wait for keystroke
-    ###################
 
-    yes = set(['yes','y', 'ye','yea','yesh','Y','oui', ''])
-    no = set(['no','n','N'])
-    print("")
-    print("Do you want to continue? Y/N (Enter continues)")
-
-    tcflush(sys.stdin, TCIOFLUSH) #Flush input buffer to stop enter-spammers
-    choice = input().lower()
-
-    if choice in yes:
-       pass
-    elif choice in no:
-       sys.exit()
-    else:
-       sys.exit()
+    #should_continue()
 
     submit_to_picas(d_vars['resuberr'], PICAS_DB, PICAS_USR, PICAS_USR_PWD, COUCHDB_SERVER_URL_AND_PORT, d_vars['OBSID'])	
     #start_jdl()
