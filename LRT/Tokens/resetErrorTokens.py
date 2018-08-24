@@ -15,11 +15,11 @@ import time
 import couchdb
 
 #picas imports
-from Tokens.picas.actors import RunActor
-from Tokens.picas.clients import CouchClient
-from Tokens.picas.iterators import BasicViewIterator
-from Tokens.picas.modifiers import BasicTokenModifier
-from Tokens.picas.executers import execute
+from LRT.Tokens.picas.actors import RunActor
+from LRT.Tokens.picas.clients import CouchClient
+from LRT.Tokens.picas.iterators import BasicViewIterator
+from LRT.Tokens.picas.modifiers import BasicTokenModifier
+from LRT.Tokens.picas.executers import execute
 
 class ExampleActor(RunActor):
     def __init__(self, iterator, modifier):

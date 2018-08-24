@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 import os, sys
-from utilities import setup_dirs, parse_arguments, should_continue
-from Tokens.createViews import createViews,get_db
-from Tokens.createObsIDView import createViews_per_OBSID
-from Tokens.resetErrorTokens import reset
-from Tokens.removeObsIDTokens import deleteDocs
-from Tokens.createTokens import loadTokens
+from LRT.utilities import setup_dirs, parse_arguments, should_continue
+from LRT.Tokens.createViews import createViews,get_db
+from LRT.Tokens.createObsIDView import createViews_per_OBSID
+from LRT.Tokens.resetErrorTokens import reset
+from LRT.Tokens.removeObsIDTokens import deleteDocs
+from LRT.Tokens.createTokens import loadTokens
 
 import configparser
 config = configparser.ConfigParser()
