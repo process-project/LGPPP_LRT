@@ -8,8 +8,8 @@ from LRT.Tokens.resetErrorTokens import reset
 from LRT.Tokens.removeObsIDTokens import deleteDocs
 from LRT.Tokens.createTokens import loadTokens
 
-import configparser
-config = configparser.ConfigParser()
+from configparser import ConfigParser, NoSectionError, NoOptionError
+config = ConfigParser()
 config.read('config.ini')
 
 try:
@@ -17,7 +17,7 @@ try:
     PICAS_USR=config['Picas']['PICAS_USR']
     PICAS_USR_PWD=config['Picas']['PICAS_USR_PWD']
     COUCHDB_SERVER_URL_AND_PORT=config['Picas']['COUCHDB_SERVER_URL_AND_PORT']
-except (NoSectionError, NoOptionError):
+except (KeyError, NoSectionError, NoOptionError):
     print("Configuration file not valid or complete!")
 
 ###########
