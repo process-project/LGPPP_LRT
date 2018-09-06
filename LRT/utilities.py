@@ -36,7 +36,7 @@
 import os, shutil, sys, re, glob, subprocess
 from termios import tcflush, TCIOFLUSH
 
-from LRT.gsurl.gsurl_v3_lgppp import gsurl_v3
+from .gsurl.gsurl_v3_lgppp import gsurl_v3
 
 ###################
 #Helper function to do a replace in file
