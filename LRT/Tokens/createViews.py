@@ -74,14 +74,14 @@ function (key, values, rereduce) {
    overview_total_view.sync(db)
 
 def get_db(PICAS_DB, PICAS_USR, PICAS_USR_PWD, COUCHDB_SERVER_URL_AND_PORT):
-    print("COUCHDB_SERVER_URL_AND_PORT = {0}".format(COUCHDB_SERVER_URL_AND_PORT))
+    #print("COUCHDB_SERVER_URL_AND_PORT = {0}".format(COUCHDB_SERVER_URL_AND_PORT))
     server = couchdb.Server(COUCHDB_SERVER_URL_AND_PORT)
     username = PICAS_USR 
     pwd = PICAS_USR_PWD
     server.resource.credentials = (username,pwd)
-    print("PICAS_DB = {0}, PICAS_USR = {1}, PICAS_USR_PWD ={2}, COUCHDB_SERVER_URL_AND_PORT={3}".format(PICAS_DB, PICAS_USR, PICAS_USR_PWD, COUCHDB_SERVER_URL_AND_PORT)) 
-    print("Before db = server[PICAS_DB]")
+    #print("PICAS_DB = {0}, PICAS_USR = {1}, PICAS_USR_PWD ={2}, COUCHDB_SERVER_URL_AND_PORT={3}".format(PICAS_DB, PICAS_USR, PICAS_USR_PWD, COUCHDB_SERVER_URL_AND_PORT)) 
+    #print("Before db = server[PICAS_DB]")
     # import pdb; pdb.set_trace()
     db = server[PICAS_DB]
-    print("Got passed db = server[PICAS_DB]")
+    #print("Got passed db = server[PICAS_DB]")
     return db

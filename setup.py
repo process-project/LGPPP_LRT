@@ -7,5 +7,6 @@ def readme():
 setup(
     name='LRT',    # This is the name of your PyPI-package.
     version='0.1',                          # Update the version number for new releases
-    packages=find_packages()
+    packages=find_packages(),
+    include_package_data=True
 )

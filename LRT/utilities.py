@@ -56,22 +56,6 @@ def replace_in_file(filename="",istring="",ostring=""):
 ############
 
 def parse_arguments(args, d_vars):
-    if len(args)<3 or ("-h" in args[:-2] or ("--help" in args[:-2])):
-        print("")
-        print("You need to input the SRM file and the master config file")
-        print("ex.  python fad-master.py [OPTIONS] srm_L229587.txt master_setup.cfg")
-        print("optional flags ( -r, -j, -s, -noTS, -d, -v) come before srm and config file ")
-        print("")
-        print("+=+=+=+= Current Options +=+=+=+=")
-        print("(-noTS or --no-time-splitting)	- turn off Time Splitting ")
-        print("(-r or --resub-error-only)   	- resubmit only error tokens ")
-        print("(-j or --jdl)		        - specify .jdl file to run  ")
-        print("(-s or --script)		        - path to the custom script you want ")
-        print("(-d or --software-dir)           - path to custom LOFAR software dir ")
-        print("(-v or --software-version)       - software version (subfolder of software-dir)")
-        print("(-h or --help) 		        - prints this message (obv)")
-        sys.exit()
-
     if ("srm" in args[-2]) and (".cfg" in args[-1]):
         d_vars['srmfile']=args[-2]
         d_vars['cfgfile']=args[-1]
@@ -79,7 +63,7 @@ def parse_arguments(args, d_vars):
     elif ("srm" in args[-1]) and (".cfg" in args[-2]):
         d_vars['srmfile']=args[-1]
         d_vars['cfgfile']=args[-2]
-
+    
     else: 
         print("there may be a typo in your filenames")
         sys.exit()
@@ -224,25 +208,3 @@ def setup_dirs(d_vars):
                 cfgfile.write('PARSET     = "-"\n')
 
     return
-
-
-def should_continue():
-    """Ask user to press key to continue"""
-    ####################
-    ##Wait for keystroke
-    ###################
-
-    yes = set(['yes','y', 'ye','yea','yesh','Y','oui', ''])
-    no = set(['no','n','N'])
-    print("")
-    print("Do you want to continue? Y/N (Enter continues)")
-
-    tcflush(sys.stdin, TCIOFLUSH) #Flush input buffer to stop enter-spammers
-    choice = input().lower()
-
-    if choice in yes:
-       pass
-    elif choice in no:
-       sys.exit()
-    else:
-       sys.exit()
