@@ -44,14 +44,15 @@ def write_observations(observation, fn):
 def write_config(config, fn):
     with open(fn, 'w') as f:
         f.write('''AVG_FREQ_STEP   = {avg_freq_step}
-                   AVG_TIME_STEP   = {avg_time_step}
-                   DO_DEMIX        = {do_demix}
-                   DEMIX_FREQ_STEP = {demix_freq_step}
-                   DEMIX_TIME_STEP = {demix_time_step}
-                   DEMIX_SOURCES   = {demix_sources}
-                   SELECT_NL       = {select_nl}
-                   PARSET		= {parset}
-                   '''.format(**config))
+AVG_TIME_STEP   = {avg_time_step}
+DO_DEMIX        = {do_demix}
+DEMIX_FREQ_STEP = {demix_freq_step}
+DEMIX_TIME_STEP = {demix_time_step}
+DEMIX_SOURCES   = {demix_sources}
+SELECT_NL       = {select_nl}
+PARSET		= {parset}
+'''.format(**config))
+    input("Config file {0} has been written, press enter to continue".format(path.abspath(fn)))
 
 # Copied from https://github.com/EOSC-LOFAR/LGPPP_LOFAR_pipeline/blob/master/LGPPP_LOFAR_pipeline/__init__.py 
 def run_pipeline(observation, **config):
