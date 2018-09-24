@@ -46,7 +46,6 @@ def loadTokens(db, OBSID, LRT_ver="1.5", tok_name="token"):
                 lofdir=config.get('OBSERVATION','LOFARDIR')
             except:
                 lofdir="/cvmfs/softdrive.nl/wjvriend/lofar_stack/2.16"
-            print("lofdir = ", lofdir)
             token = {
                 '_id': 'token_' + OBSID + '_' + str(subband_num)+"v"+LRT_ver,
                 'type': tok_name,
