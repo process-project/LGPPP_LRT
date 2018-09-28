@@ -57,18 +57,3 @@ def submit_to_picas(resuberr, OBSID):
 
     os.remove('srmlist')
     os.remove('subbandlist')
-
-# We do not need a main any more, I reckon.
-# if __name__ == "__main__":
-#     parse_arguments(sys.argv, d_vars)
-#     setup_dirs(d_vars)
-#     #prepare_sandbox()
-# 
-#     #check_state_and_stage()
-# 
-#     #should_continue()
-# 
-#     submit_to_picas(d_vars['resuberr'], d_vars['OBSID'])	
-#     #start_jdl()
-#     print("https://goo.gl/CtHlbP")
-#     sys.exit()

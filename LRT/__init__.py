@@ -52,12 +52,10 @@ DEMIX_SOURCES   = {demix_sources}
 SELECT_NL       = {select_nl}
 PARSET		= {parset}
 '''.format(**config))
-    input("Config file {0} has been written, press enter to continue".format(path.abspath(fn)))
 
 # Copied from https://github.com/EOSC-LOFAR/LGPPP_LOFAR_pipeline/blob/master/LGPPP_LOFAR_pipeline/__init__.py 
 def run_pipeline(observation, **config):
     cwd = os.getcwd()
-    print("Current working directory = ")
     pdir = cwd
     job_id = str(uuid.uuid4())
 
