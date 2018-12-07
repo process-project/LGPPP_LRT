@@ -14,4 +14,4 @@ This README would normally document whatever steps are necessary to get your app
 ### How do I get set up? ###
 
 * git clone this repo and `pip install .` in the directory containing `setup.py`.
-* `export PICASCONFIG_PATH=/path/to/config.ini`
+* `export PICASCONFIGPATH=/path/to/config.ini`
