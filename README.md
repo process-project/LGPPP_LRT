@@ -4,9 +4,9 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* LGPPP stands for LOFAR Grid PreProcessing Pipeline. It is part of the LRT (LOFAR Reductions Tools). The actual PPP software is not in this repository, it can however be launched through the interface we provide here.
+* 1.0
+* These tools were developed by 
 
 ### How do I get set up? ###
 
