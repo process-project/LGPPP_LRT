@@ -4,9 +4,10 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* LGPPP stands for LOFAR Grid PreProcessing Pipeline. It is part of the LRT (LOFAR Reductions Tools). The actual PPP software is not in this repository, it can however be launched through the interface we provide here.
+* LGPPP stands for LOFAR Grid PreProcessing Pipeline. It is part of LRT (LOFAR Reductions Tools). The actual PPP software is not in this repository, it can however be launched through the interface we provide here.
+* This does require access to the "Picas" database, which requires credentials which we do not provide here.
 * 1.0
-* These tools were developed by 
+* These tools were developed by SURFsara and by the LOFAR e-infra group (enabled by e-infra grants 1600022, 160152, 170194 from SURFsura).
 
 ### How do I get set up? ###
 
